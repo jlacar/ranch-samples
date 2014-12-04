@@ -2,6 +2,8 @@ package com.coderanch.samples.design.vend;
 
 public class VendingMachine {
 
+	private static final int MAX_ITEMS_PER_TRAY = 8;
+	
 	private int[] trays = new int[4];
 	
 	public Boolean isEmpty(int tray) {
@@ -9,7 +11,7 @@ public class VendingMachine {
 	}
 
 	public void topUp(int tray) {
-		trays[tray] = 8;
+		trays[tray] = MAX_ITEMS_PER_TRAY;
 	}
 
 }

@@ -11,6 +11,10 @@ public class VendingMachine {
 		trays = new int[shelves * MAX_TRAYS_PER_SHELF];
 	}
 
+	public VendingMachine() {
+		this(1);
+	}
+
 	public Boolean isEmpty(int tray) {
 		return trays[tray] == 0;
 	}

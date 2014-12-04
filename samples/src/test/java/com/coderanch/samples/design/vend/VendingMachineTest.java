@@ -14,7 +14,7 @@ public class VendingMachineTest {
 	
 	@Before 
 	public void setup() {
-		testSubject = new VendingMachine(1);
+		testSubject = new VendingMachine();
 	}
 	
 	@Test
@@ -61,4 +61,9 @@ public class VendingMachineTest {
 		assertThat(testSubject.isEmpty(lastTray), is(true));
 	}
 	
+	@Test
+	public void should_instantiate_with_at_least_one_shelf() throws Exception {
+		testSubject = new VendingMachine();
+		assertThat(testSubject.isEmpty(VendingMachine.MAX_TRAYS_PER_SHELF - 1), is(true));
+	}
 }

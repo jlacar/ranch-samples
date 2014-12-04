@@ -10,8 +10,9 @@ public class VendingMachine {
 		return trays[tray] == 0;
 	}
 
-	public void topUp(int tray) {
+	public int topUp(int tray) {
 		trays[tray] = MAX_ITEMS_PER_TRAY;
+		return 0;
 	}
 
 }

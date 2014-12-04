@@ -19,4 +19,11 @@ public class VendingMachineTest {
 		testSubject.topUp(0);
 		assertThat(testSubject.isEmpty(0), is(false));
 	}
+	
+	@Test
+	public void topUp_should_return_number_of_items_added_to_empty_tray() throws Exception {
+		VendingMachine testSubject = new VendingMachine();
+		int itemsAdded = testSubject.topUp(0);
+		assertThat(itemsAdded, is(8));
+	}
 }

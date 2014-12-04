@@ -12,4 +12,11 @@ public class VendingMachineTest {
 		VendingMachine testSubject = new VendingMachine();
 		assertThat(testSubject.isEmpty(0), is(true)); 
 	}
+	
+	@Test
+	public void topUp_should_fill_up_empty_tray() throws Exception {
+		VendingMachine testSubject = new VendingMachine();
+		testSubject.topUp(0);
+		assertThat(testSubject.isEmpty(0), is(false));
+	}
 }

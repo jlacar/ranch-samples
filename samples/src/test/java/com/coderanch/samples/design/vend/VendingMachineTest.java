@@ -2,6 +2,7 @@ package com.coderanch.samples.design.vend;
 
 import static org.junit.Assert.*;
 import static org.hamcrest.core.Is.*;
+import static org.hamcrest.core.IsNot.*;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -40,6 +41,15 @@ public class VendingMachineTest {
 		
 		int itemsAdded = testSubject.fill(FIRST_TRAY);
 		assertThat(itemsAdded, is(1));
+	}
+	
+	@Test
+	public void fill_should_not_overfill_a_tray() throws Exception {
+		int itemsInitiallyAdded = testSubject.fill(FIRST_TRAY);
+		int itemsSubsequentlyAdded = testSubject.fill(FIRST_TRAY);
+		
+		assertThat(itemsInitiallyAdded, is(not(0)));
+		assertThat(itemsSubsequentlyAdded, is(0));
 	}
 	
 }

@@ -6,4 +6,7 @@ public class VendingMachine {
 		return true;
 	}
 
+	public void topUp(int slot) {
+	}
+
 }

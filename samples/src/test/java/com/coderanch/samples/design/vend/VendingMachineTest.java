@@ -22,13 +22,13 @@ public class VendingMachineTest {
 	}
 	
 	@Test
-	public void topUp_should_fill_up_empty_tray() throws Exception {
+	public void fill_should_fill_up_empty_tray() throws Exception {
 		testSubject.fill(FIRST_TRAY);
 		assertThat(testSubject.isEmpty(FIRST_TRAY), is(false));
 	}
 	
 	@Test
-	public void topUp_should_return_number_of_items_added_to_empty_tray() throws Exception {
+	public void fill_should_return_number_of_items_added_to_empty_tray() throws Exception {
 		int itemsAdded = testSubject.fill(FIRST_TRAY);
 		assertThat(itemsAdded, is(VendingMachine.MAX_ITEMS_PER_TRAY));
 	}

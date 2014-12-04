@@ -2,7 +2,7 @@ package com.coderanch.samples.design.vend;
 
 public class VendingMachine {
 
-	private static final int MAX_ITEMS_PER_TRAY = 8;
+	public static final int MAX_ITEMS_PER_TRAY = 8;
 	
 	private int[] trays = new int[4];
 	

@@ -30,6 +30,6 @@ public class VendingMachineTest {
 	@Test
 	public void topUp_should_return_number_of_items_added_to_empty_tray() throws Exception {
 		int itemsAdded = testSubject.fill(FIRST_TRAY);
-		assertThat(itemsAdded, is(8));
+		assertThat(itemsAdded, is(VendingMachine.MAX_ITEMS_PER_TRAY));
 	}
 }

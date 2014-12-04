@@ -11,12 +11,13 @@ public class VendingMachine {
 	}
 
 	public int fill(int tray) {
+		int howManyAdded = MAX_ITEMS_PER_TRAY - trays[tray];
 		trays[tray] = MAX_ITEMS_PER_TRAY;
-		return MAX_ITEMS_PER_TRAY;
+		return howManyAdded;
 	}
 
 	public void dispense(int tray) {
-		
+        trays[tray] -= 1;		
 	}
 
 }

@@ -32,4 +32,14 @@ public class VendingMachineTest {
 		int itemsAdded = testSubject.fill(FIRST_TRAY);
 		assertThat(itemsAdded, is(VendingMachine.MAX_ITEMS_PER_TRAY));
 	}
+	
+	@Test
+	public void fill_should_return_number_of_items_added_to_partially_empty_tray() throws Exception {
+		testSubject.fill(FIRST_TRAY);
+		testSubject.dispense(FIRST_TRAY);
+		
+		int itemsAdded = testSubject.fill(FIRST_TRAY);
+		assertThat(itemsAdded, is(1));
+	}
+	
 }

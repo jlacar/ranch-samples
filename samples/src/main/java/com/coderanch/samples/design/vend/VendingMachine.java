@@ -15,4 +15,8 @@ public class VendingMachine {
 		return MAX_ITEMS_PER_TRAY;
 	}
 
+	public void dispense(int tray) {
+		
+	}
+
 }

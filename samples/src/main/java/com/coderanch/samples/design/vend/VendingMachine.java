@@ -6,6 +6,10 @@ public class VendingMachine {
 	
 	private int[] trays = new int[4];
 	
+	public VendingMachine(int shelves) {
+		trays = new int[shelves * 4];
+	}
+
 	public Boolean isEmpty(int tray) {
 		return trays[tray] == 0;
 	}

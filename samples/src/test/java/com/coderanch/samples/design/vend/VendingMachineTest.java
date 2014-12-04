@@ -14,7 +14,7 @@ public class VendingMachineTest {
 	
 	@Before 
 	public void setup() {
-		testSubject = new VendingMachine();
+		testSubject = new VendingMachine(1);
 	}
 	
 	@Test
@@ -50,6 +50,12 @@ public class VendingMachineTest {
 		
 		assertThat(itemsInitiallyAdded, is(not(0)));
 		assertThat(itemsSubsequentlyAdded, is(0));
+	}
+	
+	@Test
+	public void should_instantiate_with_number_of_shelves() throws Exception {
+		testSubject = new VendingMachine(4);
+		assertThat(testSubject.isEmpty(15), is(true));
 	}
 	
 }

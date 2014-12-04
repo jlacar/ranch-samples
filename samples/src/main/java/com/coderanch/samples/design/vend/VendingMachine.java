@@ -2,8 +2,8 @@ package com.coderanch.samples.design.vend;
 
 public class VendingMachine {
 
-	public boolean add(String slot, String productName, int quantity) {
-		return false;
+	public Boolean isEmpty(int slot) {
+		return true;
 	}
 
 }

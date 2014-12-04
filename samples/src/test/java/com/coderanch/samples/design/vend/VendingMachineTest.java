@@ -55,7 +55,8 @@ public class VendingMachineTest {
 	@Test
 	public void should_instantiate_with_number_of_shelves() throws Exception {
 		testSubject = new VendingMachine(4);
-		assertThat(testSubject.isEmpty(15), is(true));
+		int lastTray = (VendingMachine.MAX_TRAYS_PER_SHELF * 4) - 1;
+		assertThat(testSubject.isEmpty(lastTray), is(true));
 	}
 	
 }

@@ -29,4 +29,12 @@ public class VendingMachine {
         trays[tray] -= 1;		
 	}
 
+	public int fill(int tray, int quantity) {
+		if (trays[tray] + quantity > MAX_ITEMS_PER_TRAY) {
+			return 0;
+		}
+		trays[tray] += quantity;
+		return quantity;
+	}
+
 }

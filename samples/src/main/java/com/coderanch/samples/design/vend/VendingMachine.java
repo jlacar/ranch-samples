@@ -26,7 +26,10 @@ public class VendingMachine {
 	}
 
 	public void dispense(int tray) {
-        trays[tray] -= 1;		
+		if (trays[tray] == 0) {
+			throw new IllegalStateException("Can't dispense from an empty tray");
+		} 
+		trays[tray] -= 1;
 	}
 
 	public int fill(int tray, int quantity) {
@@ -35,6 +38,10 @@ public class VendingMachine {
 		}
 		trays[tray] += quantity;
 		return quantity;
+	}
+
+	public int getCurrentLevel(int tray) {
+		return trays[tray];
 	}
 
 }

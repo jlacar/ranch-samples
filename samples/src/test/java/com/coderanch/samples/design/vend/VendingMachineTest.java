@@ -40,7 +40,7 @@ public class VendingMachineTest {
 
 	@Test
 	public void fill_should_fill_up_empty_tray() throws Exception {
-		testSubject.fill(FIRST_TRAY);
+		setup_fill_up_FIRST_TRAY();
 		assertThat(testSubject.isEmpty(FIRST_TRAY), is(false));
 	}
 
@@ -54,7 +54,7 @@ public class VendingMachineTest {
 	@Test
 	public void fill_should_return_number_of_items_added_to_partially_empty_tray()
 			throws Exception {
-		testSubject.fill(FIRST_TRAY);
+		setup_fill_up_FIRST_TRAY();
 		testSubject.dispense(FIRST_TRAY);
 
 		int itemsAdded = testSubject.fill(FIRST_TRAY);
@@ -91,6 +91,23 @@ public class VendingMachineTest {
 		int errorIndicator = testSubject.fill(FIRST_TRAY, invalidInput);
 
 		assertThat(0, is(errorIndicator));
+	}
+
+	@Test
+	public void dispense_reduces_quantity_in_a_tray_by_1() throws Exception {
+		setup_fill_up_FIRST_TRAY();
+		testSubject.dispense(FIRST_TRAY);
+		
+		assertThat(testSubject.getCurrentLevel(FIRST_TRAY), is(VendingMachine.MAX_ITEMS_PER_TRAY - 1));
+	}
+	
+	@Test(expected=java.lang.IllegalStateException.class)
+	public void dispense_when_tray_is_empty_should_throw_IllegalStateException() throws Exception {
+		testSubject.dispense(FIRST_TRAY);
+	}
+	
+	private void setup_fill_up_FIRST_TRAY() {
+		testSubject.fill(FIRST_TRAY);
 	}
 
 	private void setup_two_empty_spaces_in_FIRST_TRAY() {

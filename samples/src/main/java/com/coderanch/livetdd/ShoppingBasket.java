@@ -18,7 +18,7 @@ public class ShoppingBasket {
     }
 
     public boolean isEmpty() {
-        return true;
+        return items.isEmpty();
     }
 
     public void add(String item, double unitPrice) {

@@ -16,6 +16,10 @@ Jesse D.
 # TDD Live Session #2: Friday, 2022 June 17
 
 ## Attendees
+Piet S.
+Stephan V.H
+Junilu L.
+Ron M.
 
 ## Notes
 

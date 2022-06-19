@@ -1,6 +1,7 @@
 package com.coderanch.livetdd;
 
 import java.math.BigDecimal;
+import java.util.function.Predicate;
 
 class Item {
 
@@ -18,5 +19,9 @@ class Item {
 
     BigDecimal getPrice() {
         return price;
+    }
+
+    static Predicate<Item> queryOnName(String name) {
+        return (Item e) -> e.getName().equals(name);
     }
 }

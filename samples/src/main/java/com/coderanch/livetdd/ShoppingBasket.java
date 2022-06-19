@@ -1,7 +1,8 @@
 package com.coderanch.livetdd;
 
 /*
-    Marking start of solo exercise: 8:13pm 18 Jun 22
+    Marking start of solo exercise: 8:13pm 18 Jun 22 c45207a3e0
+    First requirement completed: 9:15pm 18 Jun 22 6ee746ad49
  */
 
 import java.util.ArrayList;

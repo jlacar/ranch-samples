@@ -17,7 +17,7 @@ class ShoppingBasketTest {
     private ShoppingBasket basket = new ShoppingBasket();
 
     @Nested
-    class Basic_Behaviors {
+    class Basic_Operations {
         @Test
         void check_if_it_contains_any_items_using_method_isEmpty() {
             assertTrue(new ShoppingBasket().isEmpty());

@@ -17,23 +17,22 @@ class ShoppingBasketTest {
     private ShoppingBasket basket = new ShoppingBasket();
 
     @Nested
-    class New_Basket {
+    class Basic_Behaviors {
         @Test
-        void is_empty() {
+        void check_if_it_contains_any_items_using_method_isEmpty() {
             assertTrue(new ShoppingBasket().isEmpty());
         }
 
         @Test
-        void is_not_empty_after_item_added_to_it() {
+        void put_items_in_it_using_method_add() {
             basket.add(new Item("Dummy", "1.00"));
 
             assertFalse(basket.isEmpty());
         }
-
     }
 
     @Nested
-    class Method_getCount {
+    class Querying_for_quantity {
         private static final Item BALL = new Item("Ball", "9.99");
         private static final Predicate<Item> OF_BALL = Item.queryOnName(BALL.getName());
 
@@ -41,7 +40,7 @@ class ShoppingBasketTest {
         private static final Predicate<Item> OF_SPONGE = Item.queryOnName(SPONGE.getName());
 
         @Test
-        void tells_how_many_of_a_specific_item_the_basket_contains() {
+        void check_quantity_of_specific_item_in_it_using_method_howMany() {
             basket.add(BALL);
             basket.add(BALL);
 

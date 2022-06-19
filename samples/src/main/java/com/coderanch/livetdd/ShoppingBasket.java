@@ -16,7 +16,7 @@ public class ShoppingBasket {
         contents.add(item);
     }
 
-    public long getCount(Predicate itemQuery) {
+    public long howMany(Predicate itemQuery) {
         return contents.stream().filter(itemQuery).count();
     }
 
